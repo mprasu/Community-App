@@ -1,0 +1,112 @@
+{% load static from staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       <style type="text/css">
+    *{
+    	margin: 0px;
+    	padding: 0px;
+    }
+    nav ul{
+    	list-style: none;
+
+    }
+    nav ul li{
+    	background-color: grey;
+    	width: 150px;
+    	border: 0.5px solid white;
+    	height: 50px;
+    	line-height: 50px;
+    	text-align:center;
+    	float: left;
+    	color: white;
+    	font-size: 18px;
+    }
+    nav ul li:hover{
+    	background-color: green;
+    }
+   nav ul ul{
+   	display: none;
+   }
+    nav ul li:hover>ul{
+    	display: block;
+
+    }
+    </style>
+</head>
+<body class="bodyx">
+	<form  onsubmit="return validation()"  method="POST">
+        {% csrf_token %}
+<nav>
+	<ul>
+		<li><a>Home</a></li>
+		<li><a>Menu</a>
+		     <ul>
+                 <li><a href="myprofile">MyProfile</a></li>
+                 <li><a href="eprofile">EditProfile</a></li>
+			     <li><a href="events">Bookings</a></li>
+			     <li><a href="search">Search</a></li>
+                 <li><a href="cpassword">Reset Password</a></li>
+			      <li><a href="home">Logout</a></li>
+		     </ul>
+		</li>
+
+	</ul>
+</nav>
+
+
+    <br><br><br><br>
+
+{#       {% for i in fltr%}#}
+
+            Phone number:<input type=number id="mobile" onblur="phonevalidation()" name="t4" value="{{ i.Phonenumber }}">
+			<span id="phonemessage" style="color:red"></span><br><br>
+
+			Email:<input type=text id="mail" onblur="mailvalidation()" name="t5" value="{{ i.Email}}">
+			<span id="emailmessage" style="color:red"></span><br><br>
+
+			 <div onblur="castevalidation()" value="{{ i.Caste }}">
+			 Caste:<select name="t8">
+				<option>--select caste--</option>
+				<option>OC</option>
+				<option>BC</option>
+				<option>SC</option>
+			    </select></div><br><br>
+
+			Address:<input type="text" id="address" value="" onblur="addressvalidation()" name="t9" value="{{ i.Address }}">
+			<span id="addressmessage" style="color: red"></span><br><br>
+
+			<div onblur="districtvalidation()" value="{{ i.District }}">
+			District:<select name="t10">
+			<option value="select doption">--select--</option>
+            <option>Warangal</option>
+			<option>Khammam</option>
+			<option>Kurnool</option>
+			<option>Rangareddy</option>
+			<span id="msg" style="color:red"></span><br><br>
+			</select></div><br><br>
+
+			<div onblur="statevalidation()" value="{{ i.State }}">
+			State:<select name="t11">
+			<option value="select soption">--select--</option>
+			<option>Andhra Pradesh</option>
+			<option>Telanghana</option>
+			<option>Bangalore</option>
+			<option>Kerala</option>
+			<option>Tamilnadu</option>
+			<option>Karnataka</option>
+			<span id="msg" style="color:red"></span><br><br>
+			</select></div><br><br>
+{#         {% endfor %}#}
+			 <input type="submit" value="submit">
+        {{ success }}
+
+
+</form>
+
+	<script type="text/javascript" src='{% static "js/val.js" %}'></script>
+
+</body>
+</html>

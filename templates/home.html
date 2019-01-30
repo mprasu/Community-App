@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+</head>
+<body>
+
+<div class="a">
+		<ul class="b">
+            <li><a href="{% url 'signin' %}" >Register</a></li>
+			<li><a href="login">Login</a></li>{# here href is the html pagename #}
+
+	    </ul>
+
+	</div>
+
+
+
+</body>
+</html>

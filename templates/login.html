@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+body{
+background-color:lightblue;
+background-size:cover;
+}
+.b{
+    width:300px;
+	border:2px solid lightgrey;
+	padding:125px 5px 125px 5px;
+    margin:225px;
+	background-color:white;
+	color:black;
+	padding-top:5px;
+	}
+
+	</style>  .
+</head>
+<body>
+<form  method="POST"  >
+
+
+<center>
+    <ul class="b">
+    {% csrf_token %}
+<p><h3>Welcome to Login Page</h3></p>
+<li style="list-style-type:none">Username:<input type=text placeholder="Enter Username" name="t21"></li><br><br>
+<li style="list-style-type:none">Password:<input type=text placeholder="Enter Password" name="t22"></li><br><br>
+<li style="list-style-type:none"><button>Login</button></li>
+{% if msg1 %}
+{{ msg1 }}
+{% endif %}
+<p style="color:blue">If you are new register so please <br><a href="{% url 'signin' %}">register</a></p>
+        <p style="color:blue"><a href="fpassword" >Forgot Password </a></p>
+
+</ul>
+</center>
+
+</form>
+
+</body>
+</html>
+

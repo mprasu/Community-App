@@ -1,0 +1,90 @@
+{% load static from staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM</title>
+	<style type="text/css">
+	.bodyx{
+        width:300px;
+		left: 100px;
+	border:2px solid lightgrey;
+	padding:1px;
+	color:black;}
+    </style>
+</head>
+<body class="bodyx">
+	<form  onsubmit="return validation()"  method="POST">
+        {% csrf_token %}
+		<center style="background:lightblue">
+			Firstname:<input type=text id="fname" onblur="firstnamevalidation()" name="t1">
+			<span id="firstnamemessage" style="color:red"></span><br><br>
+
+			Lastname:<input type=text id="lname"  onblur="lastnamevalidation()" name="t2">
+			<span id="lastnamemessage" style="color:red"></span><br><br>
+
+			Username:<input type=text id="uname"  onblur="usernamevalidation()" name="t3">
+			<span id="usernamemessage" style="color:red"></span><br><br>
+
+			Phone number:<input type=number id="mobile" onblur="phonevalidation()" name="t4">
+			<span id="phonemessage" style="color:red"></span><br><br>
+
+			Email:<input type=text id="mail" onblur="mailvalidation()" name="t5">
+			<span id="emailmessage" style="color:red"></span><br><br>
+
+            Password:<input type="password" id="pass" name="t6" onblur="passwordvalidation()" name="t6">
+			 <span id="passwordmessage" style="color:red"></span><br><br>
+
+			 Confirm Password:<input type="password" id="cpass" onblur="confirmpasswordvalidation()" >
+			 <span id="cpasswordmessage" style="color:red"></span><br><br>
+
+
+		     <div onblur="gendervalidation()" >
+			 Gender::<select name="t7">
+				<option>--select gender--</option>
+				<option>Female</option>
+				<option>Male</option>
+				</select></div><br><br>
+
+
+
+
+			 <div onblur="castevalidation()" >
+			 Caste:<select name="t8">
+				<option>--select caste--</option>
+				<option>OC</option>
+				<option>BC</option>
+				<option>SC</option>
+			    </select></div><br><br>
+
+			Address:<input type="text" id="address" value="" onblur="addressvalidation()" name="t9">
+			<span id="addressmessage" style="color: red"></span><br><br>
+
+			<div onblur="districtvalidation()" >
+			District:<select name="t10">
+			<option value="select doption">--select--</option>
+            <option>Warangal</option>
+			<option>Khammam</option>
+			<option>Kurnool</option>
+			<option>Rangareddy</option>
+			<span id="msg" style="color:red"></span><br><br>
+			</select></div><br><br>
+
+			<div onblur="statevalidation()" >
+			State:<select name="t11">
+			<option value="select soption">--select--</option>
+			<option>Andhra Pradesh</option>
+			<option>Telanghana</option>
+			<option>Bangalore</option>
+			<option>Kerala</option>
+			<option>Tamilnadu</option>
+			<option>Karnataka</option>
+			<span id="msg" style="color:red"></span><br><br>
+			</select></div><br><br>
+			 <input type="submit" value="submit">
+
+
+</center>
+    </form>
+	<script type="text/javascript" src='{% static "js/val.js" %}'></script>
+</body>
+</html>

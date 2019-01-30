@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="POST">
+    {% csrf_token %}
+    {% for m in members %}
+    <label>Firstname:</label>
+    <input type="text" class="form-control" name="firstname" value="{{m.firstname}}" id="name" placeholder="First Name" required>
+    {% endfor %}
+</form>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+body{
+		/*background-image:url(image/n1.png);*/
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.a{
+		width: 100%;
+		height: 40px;
+		margin: 0;
+		background: grey;
+	}
+	.b{
+		height: 60px;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+
+	}
+	.b li{
+		list-style: none;
+		height: auto;
+		width: 150px;
+		float:left;
+		text-align: right;
+		padding: 0;
+		margin: 0;
+		}
+	.b a{
+		padding: 10px;
+		text-decoration: none;
+		color: white;
+		display: block;
+	}
